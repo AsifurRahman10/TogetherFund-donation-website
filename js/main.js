@@ -1,10 +1,18 @@
 // card 1 button clicked
 document.getElementById('card-1-btn').addEventListener('click', function(){
+    // inputValidation('card-1-input', 'total-balance')
+    const check = document.getElementById('card-1-input').value;
+    const totalBalanceCheck = document.getElementById('total-balance').innerText;
+    console.log(check);
+    if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
+        alert('Please enter a correct Number');
+        return;
+    }
     // data read
     const card1DonationAmount = inputToValue('card-1-input');
+    const totalBalance = elementToNumber('total-balance');
     const card1TotalDonation = elementToNumber('card-1-total-donation');
     const card1title = elementToText('card-1-title');
-    const totalBalance = elementToNumber('total-balance');
     // display the value to card specific amount
     document.getElementById('card-1-total-donation').innerText = card1TotalDonation + card1DonationAmount;
     // minus from main balance
@@ -16,6 +24,15 @@ document.getElementById('card-1-btn').addEventListener('click', function(){
 
 // card 2 button clicked
 document.getElementById('card-2-btn').addEventListener('click', function(){
+    // inputValidation('card-1-input', 'total-balance')
+    const check = document.getElementById('card-2-input').value;
+    const totalBalanceCheck = document.getElementById('total-balance').innerText;
+    console.log(check);
+    if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
+        alert('Please enter a correct Number');
+        return;
+    }
+    
     // data read
     const card2DonationAmount = inputToValue('card-2-input');
     const card2TotalDonation = elementToNumber('card-2-total-donation');
@@ -32,6 +49,15 @@ document.getElementById('card-2-btn').addEventListener('click', function(){
 
 // card 3 button clicked
 document.getElementById('card-3-btn').addEventListener('click', function(){
+    // inputValidation('card-1-input', 'total-balance')
+    const check = document.getElementById('card-3-input').value;
+    const totalBalanceCheck = document.getElementById('total-balance').innerText;
+    console.log(check);
+    if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
+        alert('Please enter a correct Number');
+        return;
+    }
+
     // data read
     const card3DonationAmount = inputToValue('card-3-input');
     const card3TotalDonation = elementToNumber('card-3-total-donation');

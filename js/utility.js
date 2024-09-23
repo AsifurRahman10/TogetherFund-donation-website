@@ -30,3 +30,4 @@ function btnColorShift(clickedID, changedID){
     document.getElementById(clickedID).classList.remove('bg-transparent');
     document.getElementById(clickedID).classList.add('bg-btn_primary'); 
 }
+
