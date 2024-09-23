@@ -3,17 +3,24 @@ document.getElementById('card-1-btn').addEventListener('click', function(){
     // inputValidation('card-1-input', 'total-balance')
     const check = document.getElementById('card-1-input').value;
     const totalBalanceCheck = document.getElementById('total-balance').innerText;
-    if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
+    if (check === '' || isNaN(check) || check <= 0) {
         alert('Please enter a correct Number');
         return;
     }
+    else if(Number(totalBalanceCheck) < Number(check)){
+        alert('You do not have enough balance');
+        return;
+    }
     // data read
+
     const card1DonationAmount = inputToValue('card-1-input');
     const totalBalance = elementToNumber('total-balance');
     const card1TotalDonation = elementToNumber('card-1-total-donation');
     const card1title = elementToText('card-1-title');
+
     // display the value to card specific amount
     document.getElementById('card-1-total-donation').innerText = card1TotalDonation + card1DonationAmount;
+
     // minus from main balance
     document.getElementById('total-balance').innerText = totalBalance - card1DonationAmount;
 
@@ -31,8 +38,12 @@ document.getElementById('card-2-btn').addEventListener('click', function(){
     // inputValidation('card-1-input', 'total-balance')
     const check = document.getElementById('card-2-input').value;
     const totalBalanceCheck = document.getElementById('total-balance').innerText;
-    if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
+    if (check === '' || isNaN(check) || check <= 0) {
         alert('Please enter a correct Number');
+        return;
+    }
+    else if(Number(totalBalanceCheck) < Number(check)){
+        alert('You do not have enough balance');
         return;
     }
     
@@ -41,13 +52,16 @@ document.getElementById('card-2-btn').addEventListener('click', function(){
     const card2TotalDonation = elementToNumber('card-2-total-donation');
     const card2title = elementToText('card-2-title');
     const totalBalance = elementToNumber('total-balance');
+
     // display the value to card specific amount
     document.getElementById('card-2-total-donation').innerText = card2TotalDonation + card2DonationAmount;
+
     // minus from main balance
     document.getElementById('total-balance').innerText = totalBalance - card2DonationAmount;
 
     // update it on history
     updateOnHistory(card2DonationAmount, card2title);
+
     // show modal
     const modal = document.getElementById('my_modal_2');
     modal.showModal();
@@ -58,8 +72,12 @@ document.getElementById('card-3-btn').addEventListener('click', function(){
     // inputValidation('card-1-input', 'total-balance')
     const check = document.getElementById('card-3-input').value;
     const totalBalanceCheck = document.getElementById('total-balance').innerText;
-    if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
+    if (check === '' || isNaN(check) || check <= 0) {
         alert('Please enter a correct Number');
+        return;
+    }
+    else if(Number(totalBalanceCheck) < Number(check)){
+        alert('You do not have enough balance');
         return;
     }
 
@@ -68,8 +86,10 @@ document.getElementById('card-3-btn').addEventListener('click', function(){
     const card3TotalDonation = elementToNumber('card-3-total-donation');
     const card3title = elementToText('card-3-title');
     const totalBalance = elementToNumber('total-balance');
+
     // display the value to card specific amount
     document.getElementById('card-3-total-donation').innerText = card3TotalDonation + card3DonationAmount;
+    
     // minus from main balance
     document.getElementById('total-balance').innerText = totalBalance - card3DonationAmount;
 
@@ -86,10 +106,12 @@ document.getElementById('card-3-btn').addEventListener('click', function(){
 document.getElementById('history-btn').addEventListener('click', function(){
     historyBtnClick('card-container', 'history-container')
     btnColorShift('history-btn', 'donation-btn');
+    document.getElementById('footer').classList.add('hidden');
 })
 
 // donation btn clicked
 document.getElementById('donation-btn').addEventListener('click', function(){
     historyBtnClick('history-container', 'card-container');
     btnColorShift('donation-btn', 'history-btn');
+    document.getElementById('footer').classList.remove('hidden');
 })
