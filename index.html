@@ -76,7 +76,7 @@
                     <div class="flex-1">
                         <img src="./assets/noakhali.png" alt="" class="lg:w-4/5">
                     </div>
-                    <div class="flex-1 space-y-3 lg:space-y-6">
+                    <div class="flex-1 space-y-3 lg:space-y-6" id="card-3-text">
                         <!-- text -->
                         <div
                             class="flex items-center gap-2 text_light bg-money_bg w-1/2 mt-5 lg:mt-0 lg:w-1/6 py-3 justify-center rounded-lg">
@@ -93,7 +93,7 @@
                             in need.</p>
                         <input id="card-1-input" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered w-full font-light text-text_light" />
-                        <button onclick="my_modal_1.showModal()" id="card-1-btn"
+                        <button onclick="" id="card-1-btn"
                             class="btn w-full bg-btn_primary text-xl font-semibold">Donate
                             Now</button>
                         <!-- modal starts -->
@@ -137,8 +137,23 @@
                             donating today to assist those in urgent need.</p>
                         <input id="card-2-input" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered w-full font-light text-text_light" />
-                        <button id="card-2-btn" onclick="my_modal_1.showModal()" class="btn w-full bg-btn_primary text-xl font-semibold">Donate
+                        <button id="card-2-btn" class="btn w-full bg-btn_primary text-xl font-semibold">Donate
                             Now</button>
+                        <!-- modal starts -->
+                        <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
+                            <div
+                                class="modal-box w-3/4 lg:w-1/3 py-10 rounded-xl bg-white mx-auto mb-10   flex only:odd:flex-col justify-center items-center gap-10">
+                                <h2 class="text-4xl font-bold">Congrats!</h2>
+                                <img src="./assets/coin.png" alt="" class="w-10">
+                                <p class="text-xl text-text_light">You Have Donated for HumanKind</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <button class="btn">close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                        <!-- modal starts -->
                             
                     </div>
                 </div>
@@ -167,8 +182,23 @@
                             brave individuals in their time of need.</p>
                         <input id="card-3-input" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered w-full font-light text-text_light" />
-                        <button onclick="my_modal_1.showModal()" id="card-3-btn" class="btn w-full bg-btn_primary text-xl font-semibold">Donate
+                        <button  id="card-3-btn" class="btn w-full bg-btn_primary text-xl font-semibold">Donate
                             Now</button>
+                        <!-- modal starts -->
+                        <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
+                            <div
+                                class="modal-box w-3/4 lg:w-1/3 py-10 rounded-xl bg-white mx-auto mb-10   flex only:odd:flex-col justify-center items-center gap-10">
+                                <h2 class="text-4xl font-bold">Congrats!</h2>
+                                <img src="./assets/coin.png" alt="" class="w-10">
+                                <p class="text-xl text-text_light">You Have Donated for HumanKind</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <button class="btn">close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                        <!-- modal starts -->
                     </div>
                 </div>
             </div>

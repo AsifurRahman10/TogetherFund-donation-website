@@ -31,3 +31,10 @@ function btnColorShift(clickedID, changedID){
     document.getElementById(clickedID).classList.add('bg-btn_primary'); 
 }
 
+function historyBtnClick(cardID, historyID){
+    document.getElementById(cardID).classList.add('hidden');
+    document.getElementById(historyID).classList.remove('hidden');
+}
+
+
+

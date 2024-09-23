@@ -3,7 +3,6 @@ document.getElementById('card-1-btn').addEventListener('click', function(){
     // inputValidation('card-1-input', 'total-balance')
     const check = document.getElementById('card-1-input').value;
     const totalBalanceCheck = document.getElementById('total-balance').innerText;
-    console.log(check);
     if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
         alert('Please enter a correct Number');
         return;
@@ -20,6 +19,11 @@ document.getElementById('card-1-btn').addEventListener('click', function(){
 
     // update it on history
     updateOnHistory(card1DonationAmount, card1title);
+    document.getElementById('my_modal_1').classList.remove('hidden');
+
+    // show modal
+    const modal = document.getElementById('my_modal_1');
+    modal.showModal();
 })
 
 // card 2 button clicked
@@ -27,7 +31,6 @@ document.getElementById('card-2-btn').addEventListener('click', function(){
     // inputValidation('card-1-input', 'total-balance')
     const check = document.getElementById('card-2-input').value;
     const totalBalanceCheck = document.getElementById('total-balance').innerText;
-    console.log(check);
     if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
         alert('Please enter a correct Number');
         return;
@@ -45,6 +48,9 @@ document.getElementById('card-2-btn').addEventListener('click', function(){
 
     // update it on history
     updateOnHistory(card2DonationAmount, card2title);
+    // show modal
+    const modal = document.getElementById('my_modal_2');
+    modal.showModal();
 })
 
 // card 3 button clicked
@@ -52,7 +58,6 @@ document.getElementById('card-3-btn').addEventListener('click', function(){
     // inputValidation('card-1-input', 'total-balance')
     const check = document.getElementById('card-3-input').value;
     const totalBalanceCheck = document.getElementById('total-balance').innerText;
-    console.log(check);
     if (check === '' || isNaN(check) || check <= 0 || Number(totalBalanceCheck) < Number(check)) {
         alert('Please enter a correct Number');
         return;
@@ -70,18 +75,21 @@ document.getElementById('card-3-btn').addEventListener('click', function(){
 
     // update it on history
     updateOnHistory(card3DonationAmount, card3title);
+
+    // show modal
+    const modal = document.getElementById('my_modal_3');
+    modal.showModal();
+    
 })
 
 // history btn clicked
 document.getElementById('history-btn').addEventListener('click', function(){
-    document.getElementById('card-container').classList.add('hidden');
-    document.getElementById('history-container').classList.remove('hidden');
+    historyBtnClick('card-container', 'history-container')
     btnColorShift('history-btn', 'donation-btn');
 })
 
 // donation btn clicked
 document.getElementById('donation-btn').addEventListener('click', function(){
-    document.getElementById('history-container').classList.add('hidden');
-    document.getElementById('card-container').classList.remove('hidden');
+    historyBtnClick('history-container', 'card-container');
     btnColorShift('donation-btn', 'history-btn');
 })
