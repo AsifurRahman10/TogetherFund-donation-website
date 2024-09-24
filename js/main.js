@@ -28,6 +28,9 @@ document.getElementById('card-1-btn').addEventListener('click', function(){
     updateOnHistory(card1DonationAmount, card1title);
     document.getElementById('my_modal_1').classList.remove('hidden');
 
+    // reset the input
+    document.getElementById('card-1-input').value = "";
+
     // show modal
     const modal = document.getElementById('my_modal_1');
     modal.showModal();
@@ -62,6 +65,9 @@ document.getElementById('card-2-btn').addEventListener('click', function(){
     // update it on history
     updateOnHistory(card2DonationAmount, card2title);
 
+     // reset the input
+     document.getElementById('card-2-input').value = "";
+
     // show modal
     const modal = document.getElementById('my_modal_2');
     modal.showModal();
@@ -95,6 +101,9 @@ document.getElementById('card-3-btn').addEventListener('click', function(){
 
     // update it on history
     updateOnHistory(card3DonationAmount, card3title);
+
+     // reset the input
+     document.getElementById('card-3-input').value = "";
 
     // show modal
     const modal = document.getElementById('my_modal_3');
